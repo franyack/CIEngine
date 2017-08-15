@@ -3,3 +3,5 @@ a
 sdasdasd
 
 asdasdasd
+
+This application will allow you organize automatically your photos and images depending on its likeness and context.
