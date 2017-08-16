@@ -1,5 +1,3 @@
-TODO: elegir un nombre!
-
 Structure: 
 http://hiltmon.com/blog/2013/07/03/a-simple-c-plus-plus-project-structure/
 http://mariuszbartosik.com/directory-structure-for-a-c-project/
