@@ -1,6 +1,6 @@
 import base64
 import json
-
+from StringIO import StringIO
 
 #
 # for i in range(1,4):
@@ -16,9 +16,23 @@ with open("images/img 2.jpg", "rb") as file2:
 with open("images/img 3.jpg", "rb") as file3:
          imagen3 = base64.b64encode(file3.read())
 
-print(imagen1)
-print(imagen2)
-print(imagen3)
+# print json.dumps({'img1': 1,'img2': 2,'img3': 3}, sort_keys=True)#, indent=4,separators=(',',': '))
+
+
+
+# print json.dumps({'img1': str(imagen1),'img2': str(imagen2),'img3': str(imagen3)}, sort_keys=True, indent=4,separators=(',',': '))
+
+io = StringIO()
+json.dump([imagen1],io)
+# print io.getvalue()
+
+decrypt = base64.b64decode(io.getvalue())
+file2 = open('images/Descript.jpg','wb')
+file2.write(decrypt)
+file2.close()
+
+
+print "Done!"
 
              # decrypt = base64.b64decode(imagen1)
     #
