@@ -2,6 +2,11 @@
 #include "../include/rapidjson/include/rapidjson/document.h"
 #include "../include/rapidjson/include/rapidjson/writer.h"
 #include "../include/rapidjson/include/rapidjson/stringbuffer.h"
+
+// #include <document.h>
+// #include <writer.h>
+// #include <stringbuffer.h>
+
 #include <iostream>
 
 using namespace rapidjson;
@@ -14,7 +19,7 @@ int main() {
 
     // 2. Modify it by DOM.
     Value& s = d["stars"];
-    s.SetInt(s.GetInt() + 1);
+    s.SetInt(s.GetInt() + 3);
 
     // 3. Stringify the DOM
     StringBuffer buffer;
