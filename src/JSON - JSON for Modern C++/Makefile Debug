@@ -1,0 +1,19 @@
+GPP=g++
+CXXFLAGS=  -fshow-column -fno-diagnostics-show-caret  -g2  -O0  `pkg-config --cflags opencv` -std=c++11 -D_DEBUG 
+LDFLAGS=   `pkg-config --libs opencv`
+OBJS=debug.lnx/main.o 
+
+all: debug.lnx debug.lnx\opencv
+
+clean:
+	rm -rf ${OBJS} debug.lnx\opencv
+
+debug.lnx\opencv: ${OBJS}
+	${GPP} ${OBJS} ${LDFLAGS} -o $@
+
+debug.lnx:
+	mkdir debug.lnx
+
+debug.lnx/main.o: main.cpp json.hpp pdi_functions.h utils.h ../../../../../../../usr/local/opencv/opencv-3.2.0/modules/core/include/opencv2/core/cvdef.h
+	${GPP} ${CXXFLAGS} -c main.cpp -o $@
+
