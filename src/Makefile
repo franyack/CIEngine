@@ -6,7 +6,7 @@ OBJS=release.lnx/main.o
 all: release.lnx linux.lnx\opencv
 
 clean:
-	rm -rf ${OBJS} linux.lnx\opencv
+	rm -rf ${OBJS} linux.lnx\opencv release.lnx
 
 linux.lnx\opencv: ${OBJS}
 	${GPP} ${OBJS} ${LDFLAGS} -o $@
@@ -14,6 +14,6 @@ linux.lnx\opencv: ${OBJS}
 release.lnx:
 	mkdir release.lnx
 
-release.lnx/main.o: main.cpp json.hpp pdi_functions.h utils.h ../../../../../../../usr/local/opencv/opencv-3.2.0/modules/core/include/opencv2/core/cvdef.h
+release.lnx/main.o: main.cpp json.hpp
 	${GPP} ${CXXFLAGS} -c main.cpp -o $@
 

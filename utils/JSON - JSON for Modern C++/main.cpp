@@ -4,6 +4,7 @@
 #include <opencv2/core/types.hpp>
 #include <opencv2/core/matx.hpp>
 #include <opencv2/imgproc.hpp>
+#include "opencv2/core/cvdef.h"
 
 #include "json.hpp"
 
@@ -13,7 +14,6 @@
 #include <iostream>
 #include <iomanip>
 #include <vector>
-#include "/usr/local/opencv/opencv-3.2.0/modules/core/include/opencv2/core/cvdef.h"
 #include <bitset>
 #include <cstdlib>
 #include <cstring>
